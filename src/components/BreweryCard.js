@@ -19,10 +19,8 @@ const BreweryCard = ({ breweries = [] }) => {
             val.name.toLowerCase().includes(value.toLocaleLowerCase()) ||
             val.brewery_type.toLowerCase().includes(value.toLocaleLowerCase()) ||
             val.city.toLowerCase().includes(value.toLocaleLowerCase())
-            ) {
-              return val;
-            }
-          })
+            ) return val;
+        })
           .map((brewery) => (
             <Card key={brewery.id}>
               <Card.Text>
