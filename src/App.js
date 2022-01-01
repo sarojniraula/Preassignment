@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import { getBreweries } from './breweries/breweries';
 import BreweryCard from './components/BreweryCard';
+import BreweryList from './components/BreweryList';
 import Search from './components/Search';
 
 function App() {
@@ -33,7 +34,8 @@ function App() {
   return (
     <Fragment>
       <div>
-        Saroj Niraula
+        <h2>Saroj Niraula</h2>
+        <h3>Pre-assignment</h3>
       </div>
       {loading ? (
         <h2>loading</h2>
@@ -42,6 +44,7 @@ function App() {
           <Router>
             <Routes>
               <Route exact path="/" element={<BreweryCard breweries={breweries} />} />
+              <Route exact path="/:id" element={<BreweryList breweries={breweries} />} />
             </Routes>
           </Router>
         </div>
