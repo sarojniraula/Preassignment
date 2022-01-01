@@ -1,17 +1,26 @@
 import React, { useState } from "react";
 
-const Search = (value) => {
-    const [keyword, setKeyword] = useState('');
+const Search = ({ setValue }) => {
+  const [keyword, setKeyword] = useState("");
 
-    const handleChange = () => {
-        setKeyword(value);
-    }
-    return (
-        <div>
-            <input type="text" />
-            <input type="submit" value="Search Brewery" />
-        </div>
-    )
-}
+  const handleChange = (event) => {
+    setKeyword(event.target.value);
+  };
+
+  console.log(keyword);
+
+  function handleSubmit(event) {
+    setValue(keyword);
+    setKeyword("");
+    event.preventDefault();
+  }
+
+  return (
+    <div className="searchBox">
+      <input type="text" value={keyword} onChange={handleChange} />
+      <button className="breweryButton" onClick={handleSubmit}>Search Breweries</button>
+    </div>
+  );
+};
 
 export default Search;

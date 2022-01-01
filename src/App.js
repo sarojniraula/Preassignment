@@ -5,7 +5,6 @@ import './App.css';
 import { getBreweries } from './breweries/breweries';
 import BreweryCard from './components/BreweryCard';
 import BreweryList from './components/BreweryList';
-import Search from './components/Search';
 
 function App() {
 

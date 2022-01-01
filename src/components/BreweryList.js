@@ -8,7 +8,7 @@ const BreweryList = ({ breweries }) => {
     const navigate = useNavigate(); //for navigating back and forth.
 
     return (
-        <div>
+        <div className="details">
             <Card>
                 {breweries
                     .filter((brewery) => brewery.id === id)
