@@ -15,18 +15,10 @@ const BreweryCard = ({ breweries = [] }) => {
       <div className="breweryCard">
         {breweries
           .filter((val) => {
-            if (value === "") {
-              return val;
-            } else if (
-              val.name.toLowerCase().includes(value.toLocaleLowerCase())
-            ) {
-              return val;
-            } else if (
-              val.city.toLowerCase().includes(value.toLocaleLowerCase())
-            ) {
-              return val;
-            } else if (
-              val.brewery_type.toLowerCase().includes(value.toLocaleLowerCase())
+            if (value === "" ||
+            val.name.toLowerCase().includes(value.toLocaleLowerCase()) ||
+            val.brewery_type.toLowerCase().includes(value.toLocaleLowerCase()) ||
+            val.city.toLowerCase().includes(value.toLocaleLowerCase())
             ) {
               return val;
             }
